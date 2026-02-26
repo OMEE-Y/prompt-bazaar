@@ -27,3 +27,12 @@ git clone https://github.com/USERNAME/prompt-bazaar.git
 cd prompt-bazaar
 npm install
 npm run dev
+```
+---
+
+[Live Demo](https://prompt-bazaar.netlify.app/)  
+
+
+# Prompt Bazaar
+
+[Live Demo](https://your-project-url.com)  
