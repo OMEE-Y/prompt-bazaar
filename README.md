@@ -23,7 +23,7 @@ It’s a **marketplace for AI prompts**, designed to help you get better results
 1. Clone the repository:
 
 ```bash
-git clone https://github.com/USERNAME/prompt-bazaar.git
+git clone https://github.com/OMEE-Y/prompt-bazaar.git
 cd prompt-bazaar
 npm install
 npm run dev
