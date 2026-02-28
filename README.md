@@ -29,5 +29,3 @@ npm install
 npm run dev
 ```
 ---
- # Prompt Bazaar
-[Live Demo](https://prompt-bazaar.netlify.app/)  
