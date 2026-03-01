@@ -1,6 +1,6 @@
 import { useEffect, useState } from "react";
 import SubagentCard from "./SubagentCard.jsx";
-
+import { FaGithub, FaXTwitter } from "react-icons/fa6";
 const subagents = [
   {
     id: "react-architect",
@@ -442,38 +442,75 @@ export default function App() {
   });
 
   return (
-    <div className="min-h-screen bg-white dark:bg-black text-black dark:text-white transition-colors duration-300">
+    <div className="min-h-screen w-full bg-black relative overflow-hidden">
 
-      <header className="flex justify-between items-center px-8 py-6 border-b border-neutral-200 dark:border-neutral-800">
-        <h1 className="text-2xl font-semibold tracking-tight">
-          Prompt Bazaar
-        </h1>
+  {/* Dark Noise Colored Background */}
+  <div
+    className="absolute inset-0 z-0"
+    style={{
+      background: "#000000",
+      backgroundImage: `
+        radial-gradient(circle at 1px 1px, rgba(139, 92, 246, 0.2) 1px, transparent 0),
+        radial-gradient(circle at 1px 1px, rgba(59, 130, 246, 0.18) 1px, transparent 0),
+        radial-gradient(circle at 1px 1px, rgba(236, 72, 153, 0.15) 1px, transparent 0)
+      `,
+      backgroundSize: "20px 20px, 30px 30px, 25px 25px",
+      backgroundPosition: "0 0, 10px 10px, 15px 5px",
+    }}
+  />
 
-       
-      </header>
+  {/* Content Wrapper */}
+  <div className="relative z-10">
 
-      <main className="max-w-6xl mx-auto px-6 py-12">
+    <header className="flex justify-between items-center px-8 py-6 border-b border-neutral-800">
+      <h1 className="text-2xl font-semibold tracking-tight text-white hover:drop-shadow-[0_0_8px_rgba(255,255,255,0.4)] duration-300 transition cursor-default">
+        Prompt Bazaar
+      </h1>
 
-        <input
-          placeholder="Search subagents..."
-          value={query}
-          onChange={(e) => setQuery(e.target.value)}
-          className="w-full mb-10 p-3 rounded-xl border border-neutral-300 dark:border-neutral-700 bg-transparent focus:outline-none focus:ring-1 focus:ring-neutral-500 transition"
-        />
+      <div className="flex items-center gap-4 text-xl">
+        <a
+          href="https://github.com/OMEE-Y"
+          target="_blank"
+          rel="noopener noreferrer"
+          className="text-neutral-500 hover:text-white transition"
+        >
+          <FaGithub />
+        </a>
 
-        <div className="grid md:grid-cols-2 lg:grid-cols-3 gap-6">
-          {filtered.map(agent => (
-            <SubagentCard key={agent.id} agent={agent} />
-          ))}
-        </div>
+        <a
+          href="https://x.com/omee_y"
+          target="_blank"
+          rel="noopener noreferrer"
+          className="text-neutral-500 hover:text-white transition"
+        >
+          <FaXTwitter />
+        </a>
+      </div>
+    </header>
 
-        {filtered.length === 0 && (
-          <p className="text-neutral-500 mt-8">
-            No matching subagents found.
-          </p>
-        )}
+    <main className="max-w-6xl mx-auto px-6 py-12 text-white">
 
-      </main>
-    </div>
+      <input
+        placeholder="Search subagents..."
+        value={query}
+        onChange={(e) => setQuery(e.target.value)}
+        className="w-full mb-10 p-3 rounded-xl border border-neutral-700 bg-transparent focus:outline-none focus:ring-1 focus:ring-neutral-500 transition"
+      />
+
+      <div className="grid md:grid-cols-2 lg:grid-cols-3 gap-6">
+        {filtered.map(agent => (
+          <SubagentCard key={agent.id} agent={agent} />
+        ))}
+      </div>
+
+      {filtered.length === 0 && (
+        <p className="text-neutral-500 mt-8">
+          No matching subagents found.
+        </p>
+      )}
+
+    </main>
+  </div>
+</div>
   );
 }

@@ -9,18 +9,7 @@ export default function SubagentCard({ agent }) {
     setTimeout(() => setCopied(false), 1500);
   };
 
-  const openInClaude = () => {
-    const encoded = encodeURIComponent(agent.systemPrompt);
-    window.open(`https://claude.ai/new?prompt=${encoded}`, "_blank");
-  };
-
-  const openInChatGPT = async () => {
-    // Copy prompt to clipboard
-    await navigator.clipboard.writeText(agent.systemPrompt);
-    // Open ChatGPT
-    window.open("https://chat.openai.com/chat", "_blank");
-    alert("Prompt copied! Just paste it in ChatGPT.");
-  };
+ 
 
   return (
     <div className="group p-6 rounded-2xl border border-neutral-200 dark:border-neutral-800 bg-neutral-50 dark:bg-neutral-900 hover:scale-[1.02] hover:shadow-xl transition-all duration-300">
@@ -38,9 +27,7 @@ export default function SubagentCard({ agent }) {
         ))}
       </div>
 
-      <div className="bg-white dark:bg-black border border-neutral-200 dark:border-neutral-700 p-3 rounded-xl font-mono text-xs mb-4 whitespace-pre-wrap">
-        {agent.systemPrompt}
-      </div>
+     
 
       <div className="flex gap-2 flex-wrap">
         <button
