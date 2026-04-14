@@ -20,7 +20,7 @@ It’s a **marketplace for AI prompts**, designed to help you get better results
 
 ## Installation
 
-1. Clone the repository:
+
 
 ```bash
 git clone https://github.com/OMEE-Y/prompt-bazaar.git
