@@ -1,5 +1,7 @@
 @import "tailwindcss";
 
-html {
-  font-family: 'Geist', sans-serif;
+@layer base {
+  body {
+    @apply bg-white dark:bg-black text-neutral-900 dark:text-white transition-colors duration-300;
+  }
 }
